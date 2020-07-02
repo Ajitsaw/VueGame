@@ -1,0 +1,198 @@
+* {
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease 0s;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    background: #f9f9f9;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif !important;
+    padding: 30px;
+}
+#app {
+    width: 900px;
+    height:100%;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+}
+p {
+    margin-bottom: 10px;
+}
+button, a {
+    background-color: #fff;
+    color: #383838;
+    height: 60px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    padding: 0 40px;
+    box-shadow: 0 0 10px 0px rgba(0,0,0,.1);
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    margin: 10px 10px;
+}
+*:focus {
+    outline: none;
+}
+button:hover, a:hover {
+    outline: none;
+}
+hr {
+    margin: 30px 0;
+    border: 1px solid #ccc;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    margin-bottom: 10px;
+}
+h3, h4 {
+    margin-bottom: 15px;
+}
+table {
+    width: 100%;
+}
+table th, table td {
+    padding: 10px 10px 10px 0;
+    text-transform: capitalize;
+    text-align: left;
+}
+table th {
+    font-weight: 600;
+}
+
+.health-bar {
+    display: flex;
+    justify-content: space-between;
+}
+.heath-bar-holder {
+    width: 45%;
+}
+.heath-bar-holder {
+    width: calc(100%/2 - 60px);
+}
+.vs img {
+    width: 110px;
+}
+.vs {
+    margin: 0 30px;
+}
+.text-right {
+    text-align: right;
+}
+.icon img {
+    width: 30px;
+}
+.health-bar-holder-up {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.heath-bar-holder:last-child .health-bar-holder-up {
+    flex-flow: row-reverse;
+
+}
+.health-bar-holder-down {
+    width: 100%;
+    height: 40px;
+    background: #fff1f3;
+    border-radius: 34px;
+    overflow: hidden;
+}
+span.health-bar-holder-down__count {
+    background: #ed3c43;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+}
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    background: #f9f9f9;
+    padding: 80px 30px 30px;
+    border-radius: 5px;
+    justify-content: center;
+    position: relative;
+}
+.buttons img {
+    margin-right: 10px;
+    width: 30px;
+}
+button.button-start {
+    align-items: center;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+button.button-start:hover:before {
+    left: -20px;
+    top: -40px;
+    transition: all .3s ease 0s;
+}
+button.button-start:hover:after {
+    right: -20px;
+    bottom: -40px;
+    transition: all .3s ease 0s;
+}
+button.button-start:before {
+    content: "";
+    background: #ed3c43;
+    width: 40px;
+    height: 80px;
+    position: absolute;
+    left: -100px;
+    top: -100px;
+    transform: rotate(45deg);
+    transition: all .3s ease 0s;
+}
+button.button-start:after {
+    content: "";
+    background: #ed3c43;
+    width: 40px;
+    height: 80px;
+    position: absolute;
+    right: -100px;
+    bottom: -100px;
+    transform: rotate(45deg);
+    transition: all .3s ease 0s;
+}
+button.button-start.button-big {
+    padding: 0px 75px;
+    height: 65px;
+}
+p.steps-text {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 15px 30px;
+    background: #f1f1f1;
+    text-align: center;
+    font-size: 14px;
+}
+.buttons.text-info {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+    flex-flow: column;
+    align-items: flex-start;
+}
+.buttons.text-info p {
+    font-size: 14px;
+}

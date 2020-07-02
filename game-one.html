@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs Game One</title>
+    <link rel="stylesheet" href="css/style-game-one.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Heath bars -->
+        <div class="health-bar">
+            <div class="heath-bar-holder">
+                <div class="health-bar-holder-up">
+                    <div class="icon"><img src="images/human.png" alt=""></div>
+                    <label for="">Human</label>
+                    
+                </div>
+                <div class="health-bar-holder-down">
+                    <span class="health-bar-holder-down__count" :style="{width: human + '%'}">{{ human }}%</span>
+                </div>
+            </div>
+            <div class="vs">
+                <img src="images/vs.png" alt="">
+            </div>
+            <div class="heath-bar-holder text-right">
+                <div class="health-bar-holder-up">
+                    <div class="icon"><img src="images/corona.png" alt=""></div>
+                    <label for="">Covid-19</label>
+                </div>
+                <div class="health-bar-holder-down">
+                    <span class="health-bar-holder-down__count" :style="{width: covid + '%'}">{{ covid }}%</span>
+                </div>
+            </div>
+        </div>
+        <!-- Buttons -->
+
+        <div class="buttons" v-if="startfight == 'start'">
+            <p class="steps-text">"If you want to win over something then you to <b>fight</b> it first."</p>
+            <button class="button-start button-big" @click="startButton"><img src="images/fight.png" alt=""> Fight with Covid-19</button>
+        </div>
+        <div class="buttons" v-if="startfight == 'continue'">
+            <p class="steps-text">{{ infoButtons }}</p>
+            <button class="button-start" @click="mask" v-if='isMask'><img src="images/no-mask.png" alt=""> No Mask</button>
+            <button class="button-start" @click="socialDistancing" v-if='isDistancing'><img src="images/social.png" alt="">Social Distancing</button>
+            <button class="button-start" @click="unwashedHand" v-if='isHand'><img src="images/handwash.png" alt="">Unwashed Hand</button>
+            <button class="button-start" @click="stanitizer" v-if='isStanitizer'><img src="images/sanitizer.svg" alt="">Stanitizer</button>
+            <button class="button-start" @click="immunity" v-if='isImmunity'><img src="images/immune.png" alt="">Immunity +</button>
+            <button class="button-start button-big" @click="antidote" v-if='isAntidote'><img src="images/vacine.png" alt="">Use Antidote!</button>
+        </div>
+        <div v-else></div>
+        <div class="buttons text-info">
+            <h4>Informative Text:</h4>
+            <div v-html="infoText"></div>
+        </div>
+    </div>
+
+    <!-- Vue js -->
+    <script src="js/vue.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
